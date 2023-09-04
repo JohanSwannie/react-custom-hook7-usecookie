@@ -11,6 +11,11 @@ const useCookie = (title, defaultValue) => {
     return defaultValue;
   });
 
+  const deleteCookie = useCallback(() => {
+    Cookies.remove(title);
+    setValue(null);
+  }, [title]);
+
   const updateCookie = useCallback(
     (newValue, options) => {
       Cookies.set(title, newValue, options);
@@ -19,12 +24,7 @@ const useCookie = (title, defaultValue) => {
     [title]
   );
 
-  const removeCookie = useCallback(() => {
-    Cookies.remove(title);
-    setValue(null);
-  }, [title]);
-
-  return [value, updateCookie, removeCookie];
+  return [value, deleteCookie, updateCookie];
 };
 
 export default useCookie;
