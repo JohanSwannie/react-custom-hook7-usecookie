@@ -1,7 +1,7 @@
 import useCookie from "./useCookie";
 
 const CookieComponent = () => {
-  const [value, update, remove] = useCookie("title", "Professor");
+  const [value, remove, update] = useCookie("title", "Professor");
 
   return (
     <>
