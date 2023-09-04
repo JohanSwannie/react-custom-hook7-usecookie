@@ -1,5 +1,7 @@
+import CookieComponent from "./CookieComponent";
+
 function App() {
-  return <div className="App"></div>;
+  return <CookieComponent />;
 }
 
 export default App;
