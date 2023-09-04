@@ -1,7 +1,7 @@
 import useCookie from "./useCookie";
 
 const CookieComponent = () => {
-  const [value, remove, update] = useCookie("title", "Professor");
+  const [value, deleteTitle, update] = useCookie("title", "Professor");
 
   return (
     <>
@@ -14,7 +14,7 @@ const CookieComponent = () => {
         <button onClick={() => update("President")}>
           Change Title to President
         </button>
-        <button onClick={remove}>Delete Title</button>
+        <button onClick={deleteTitle}>Delete Title</button>
       </div>
     </>
   );
